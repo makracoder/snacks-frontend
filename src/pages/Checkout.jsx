@@ -6,7 +6,7 @@ import api from '../api/axios';
 function Checkout() {
   const { items, total, clearCart, updateQuantity, removeFromCart } = useCart();
   const navigate = useNavigate();
-  const [form, setForm] = useState({ customerName: '', phone: '', address: '', paymentMethod: 'COD' });
+  const [form, setForm] = useState({ customerName: '', phone: '', email: '', address: '', paymentMethod: 'COD' });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
 
@@ -58,6 +58,8 @@ function Checkout() {
         <input name="customerName" placeholder="Your Name" required value={form.customerName} onChange={handleChange}
           className="w-full border rounded p-2" />
         <input name="phone" placeholder="Phone Number" required value={form.phone} onChange={handleChange}
+          className="w-full border rounded p-2" />
+        <input name="email" type="email" placeholder="Email (optional, for order confirmation)" value={form.email} onChange={handleChange}
           className="w-full border rounded p-2" />
         <textarea name="address" placeholder="Delivery Address" required value={form.address} onChange={handleChange}
           className="w-full border rounded p-2" />
