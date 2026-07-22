@@ -33,9 +33,9 @@ function Home() {
         )}
         {Object.entries(grouped).map(([category, items]) => (
           <div key={category} className="mb-8">
-            <h2 className="text-lg font-bold text-brand-maroon mb-3 border-b-2 border-brand-mustard inline-block pb-1">
-              {category}
-            </h2>
+            <h2 className="text-lg font-bold text-brand-maroon mb-3 border-b-2 border-brand-mustard inline-block pb-1 tracking-wide">
+  {category}
+</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-3">
               {items.map(p => <ProductCard key={p._id} product={p} />)}
             </div>
